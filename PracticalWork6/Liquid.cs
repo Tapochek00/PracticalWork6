@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -125,17 +126,19 @@ namespace Пять
         /// <summary>
         /// Увеличивает объём на 1
         /// </summary>
-        public void IncreaseVolume()
+        public static Liquid operator ++(Liquid liquid)
         {
-            Volume += 1;
+            liquid.Volume += 1;
+            return liquid;
         }
 
         /// <summary>
         /// Уменьшает объём на 1
         /// </summary>
-        public void DecreaseVolume()
+        public static Liquid operator --(Liquid liquid)
         {
-            Volume -= 1;
+            if (liquid.Volume > 0) liquid.Volume -= 1;
+            return liquid;
         }
     }
 }

@@ -111,32 +111,26 @@ namespace Пять
 
         private void btn_decr_Click(object sender, RoutedEventArgs e)
         {
-            if (liquid1.Volume > 0)
-            {
-                liquid1.DecreaseVolume();
-                liquid1_info.Text = liquid1.LiquidInfo();
-            }
+            liquid1--;
+            liquid1_info.Text = liquid1.LiquidInfo();
         }
 
         private void btn_inc_Click(object sender, RoutedEventArgs e)
         {
-            liquid1.IncreaseVolume();
+            liquid1++;
             liquid1_info.Text = liquid1.LiquidInfo();
         }
 
         private void btn_inc2_Click(object sender, RoutedEventArgs e)
         {
-            liquid2.IncreaseVolume();
+            liquid2++;
             liquid2_info.Text = liquid2.LiquidInfo();
         }
 
         private void btn_decr2_Click(object sender, RoutedEventArgs e)
         {
-            if (liquid2.Volume > 0)
-            {
-                liquid2.DecreaseVolume();
-                liquid2_info.Text = liquid2.LiquidInfo();
-            }
+            liquid2--;
+            liquid2_info.Text = liquid2.LiquidInfo();
         }
     }
 }
