@@ -113,13 +113,26 @@ namespace Пять
         }
 
         /// <summary>
-        /// Проверяет, что сосуды имеют одинаковые жидкости равного объема.
+        /// Проверка, что сосуды имеют одинаковые жидкости равного объема.
         /// </summary>
-        /// <param name="liquid"></param>
-        /// <returns>Логическое значение: true, если жидкости одинаковые; false, если жидкости разные</returns>
-        public bool IsSame(Liquid liquid)
+        /// <param name="liquid1">Жидкость 1</param>
+        /// <param name="liquid2">Жидкость 2</param>
+        /// <returns>true, если жидкости одинаковые; false, если жидкости разные</returns>
+        public static bool operator ==(Liquid liquid1, Liquid liquid2)
         {
-            if(liquid.Name == Name && liquid.Density == Density && liquid.Volume == Volume) return true;
+            if(liquid1.Name == liquid2.Name && liquid1.Density == liquid2.Density && liquid1.Volume == liquid2.Volume) return true;
+            else return false;
+        }
+
+        /// <summary>
+        /// Проверка, что сосуды имеют разные жидкости.
+        /// </summary>
+        /// <param name="liquid1">Жидкость 1</param>
+        /// <param name="liquid2">Жидкость 2</param>
+        /// <returns>true, если жидкости разные; false, если жидкости одинаковые</returns>
+        public static bool operator !=(Liquid liquid1, Liquid liquid2)
+        {
+            if (liquid1.Name != liquid2.Name || liquid1.Density != liquid2.Density || liquid1.Volume != liquid2.Volume) return true;
             else return false;
         }
 
