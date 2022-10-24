@@ -132,5 +132,11 @@ namespace Пять
             liquid2--;
             liquid2_info.Text = liquid2.LiquidInfo();
         }
+
+        private void btn_Compare_Click(object sender, RoutedEventArgs e)
+        {
+            if (liquid1 == liquid2) MessageBox.Show("Жидкости имеют равный объём, равную плотность и одинаковое название");
+            else MessageBox.Show("Жидкости различаются");
+        }
     }
 }
